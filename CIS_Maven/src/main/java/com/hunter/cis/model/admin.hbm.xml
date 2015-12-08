@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hunter.cis.model">
+
+	<class name="Admin" table="admin">
+		<id name="id" column="Id">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="username" column="userName"></property>
+		<property name="password" column="password"></property>
+		<property name="createTime" column="createTime"></property>
+		<property name="lastTime" column="lastTime"></property>
+		<property name="email" column="email"></property>
+		</class>
+
+</hibernate-mapping>

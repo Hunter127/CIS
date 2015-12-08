@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hunter.cis.model">
+
+	<class name="Company" table="company">
+		<id name="id" column="cId">
+			<generator class="native"></generator>
+		</id>
+		
+		<property name="name" column="companyName"></property>
+		
+		<many-to-one name="industry" column="iId"
+			class="com.hunter.cis.model.Industry" cascade="save-update"></many-to-one>
+		<!--由于在Team.hbm.xml中设置了inverse=“true”，team和student之间的关系由student来维  -->
+		<!-- 用户关注公司，这种关系应该由用户维护  -->
+		<set name="users" table="user_company" inverse="true">
+		   <key column="c_Id"></key>
+		   <many-to-many class="com.hunter.cis.model.User" column="Id"></many-to-many>
+		</set>
+		
+	</class>
+
+</hibernate-mapping>

@@ -1,0 +1,98 @@
+#fg1{
+  float:right;
+  
+}
+#fg2{
+	float:right;
+}
+.box1{
+width: 200px;
+height: 100px;
+border: 1px solid #F00;
+margin-top: 10px;
+padding-left: 15px;
+
+}
+.site-header {
+	text-align: center;
+	background-color: #C0C0C0;
+	color: #fff;
+	margin-bottom: 0;
+}
+
+.site-header h1 {
+	font-size: 50px;
+}
+
+.site-header p {
+	color: #f4f4f4;
+}
+
+form {
+	display: block;
+	margin-top: 0em;
+}
+
+.site-header .form-group {
+	position: relative;
+	margin-top: 40px;
+}
+
+.site-header .search {
+	border: 2px solid #27ae60;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	font-size: 16px;
+	padding: 15px 30px;
+	border-radius: 0;
+	height: auto;
+	text-align: center;
+}
+
+.site-header .search+.fa.onX {
+	cursor: pointer;
+}
+
+.site-header .fa {
+	position: absolute;
+	right: 25px;
+	top: 15px;
+	color: #eee;
+	font-size: 24px;
+}
+
+.fa {
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);
+}
+
+.fa-search:before {
+	content: "\f002";
+}
+
+
+ .package-info, .mostused-packages {
+border-radius: 0;
+border: none;
+}
+#main-top{
+	 background:#FFFFFF;
+    color:#FFFFFF;
+}
+.Box1{
+	height:400px;
+}
+.Box2{
+	height: 400px;
+}
+.Box3{
+	height: 400px;
+}
+.Box4{
+	height: 400px;
+}

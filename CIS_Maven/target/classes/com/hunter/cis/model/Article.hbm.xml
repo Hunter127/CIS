@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.hunter.cis.model">
+
+	<class name="Article" table="article">
+		<id name="id" column="Id">
+			<generator class="native"></generator>
+		</id>
+		<property name="title" column="title"></property>
+		<property name="content" column="content" type="text"></property>
+		<property name="keywords" column="keywords"></property>
+		<property name="fromUrl" column="fromUrl"></property>
+		<property name="createTime" column="createTime"></property>
+		
+		<many-to-one name="industry" column="iId"
+			class="com.hunter.cis.model.Industry" cascade="save-update"></many-to-one>
+			
+		</class>
+
+</hibernate-mapping>

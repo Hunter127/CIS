@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+  <constant name="struts.enable.DynamicMethodInvocation" value="true" />
+  <constant name="struts.devMode" value="true" />
+  <!-- <constant name="struts.multipart.maxSize" value="100971520"></constant> -->
+  <constant name="struts.i18n.encoding" value="UTF-8"></constant>
+  <constant name="struts.objectFactory.spring.autoWire" value="name"></constant>
+  <!-- 将struts2交给spring管理-->
+  <constant name="struts.objectFactory" value="spring"></constant>
+  <constant name="struts.custom.i18n.resources" value="messages"></constant>
+         
+         
+      <!--  
+			Spring 整合 Struts2 时, 在 Struts2 中配置的 Spring 的 Action 的 class 需要指向 IOC 容器中该 bean 的 id
+			class是Applicationcontext.xml的bena Id
+			
+			所谓的整合，，以前class是指向全类名，，现在指向IOC容器的bean Id
+			如何使用注解的话，class指向控制器注解时的命名
+		-->
+
+<package name="user" extends="struts-default"> 
+
+		<action name="login" class="userAction" method="login">
+			<result name="input">/failure.jsp</result>
+			<result name="success">/Cloud.jsp</result>
+		</action>
+
+		<action name="logout" class="userAction" method="logout">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="regist" class="userAction" method="regist">
+			<result name="input">/failure.jsp</result>
+			<result name="success">/success.jsp</result>
+		</action> 
+		
+		 <action name="randomImg" class="imageAction">  
+            <result type="stream">  
+                <param name="contentType">image/jpeg</param>  
+                <param name="inputtName">inputStream</param>  
+            </result>  
+        </action> 
+        
+          <action name="ToShow" class="showAction">  
+             <result name="error"></result>
+			<result name="success">/indexs.jsp</result>
+        </action>
+         <action name="GetArticleList" class="articleAction">  
+             <result name="error">/view/common/Pregister.jsp</result>
+			<result name="success">/view/common/cPage.jsp</result>
+        </action>  
+         <action name="search" class="searchAction">  
+             <result name="error">/1.jsp</result>
+			<result name="success">/1.jsp</result>
+        </action> 
+</package>
+ 
+</struts>
